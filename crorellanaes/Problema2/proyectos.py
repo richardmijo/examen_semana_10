@@ -1,4 +1,3 @@
-#
 class Tarea:
     def __init__(self, nombre, descripcion, estado='pendiente'):
         self.nombre = nombre
@@ -12,8 +11,7 @@ class Tarea:
             raise ValueError("Estado invalido. Use: 'pendiente', 'en progreso' o 'completada'.")
 
     def __str__(self):
-        return f"Tarea: {self.nombre} | Estado: {self.estado} | Descripción: {self.descripcion}"
-
+        return f"Tarea: {self.nombre} | Estado: {self.estado} | Descripcion: {self.descripcion}"
 
 
 class NodoTarea:
@@ -62,7 +60,6 @@ class Proyecto:
             anterior = actual
             actual = actual.siguiente
 
- 
         if actual.tarea.nombre == nombre_tarea:
             if actual.siguiente == self.tareas: 
                 self.tareas = None
@@ -85,38 +82,37 @@ class Proyecto:
                 break  
 
 
-
 def menu():
     lista_proyectos = []
 
     while True:
-        print("\n=== Sistema de Administración de Proyectos ===")
+        print("\n=== Sistema de Administracion de Proyectos ===")
         print("1. Agregar un nuevo proyecto")
         print("2. Agregar tarea a un proyecto")
         print("3. Eliminar tarea de un proyecto")
-        print("4. Recorrer tareas de un proyecto cíclicamente")
+        print("4. Recorrer tareas de un proyecto ciclicamente")
         print("5. Listar todos los proyectos y sus tareas")
         print("6. Salir")
 
-        opcion = input("Seleccione una opción: ")
+        opcion = input("Seleccione una opcion: ")
 
         if opcion == '1':
             id_proyecto = input("Ingrese el ID del proyecto: ")
             nombre_proyecto = input("Ingrese el nombre del proyecto: ")
             lista_proyectos.append(Proyecto(id_proyecto, nombre_proyecto))
-            print("Proyecto agregado con éxito.")
+            print("Proyecto agregado con exito.")
         
         elif opcion == '2':
             id_proyecto = input("Ingrese el ID del proyecto: ")
             nombre_tarea = input("Ingrese el nombre de la tarea: ")
-            descripcion = input("Ingrese la descripción de la tarea: ")
+            descripcion = input("Ingrese la descripcion de la tarea: ")
 
             proyecto = next((p for p in lista_proyectos if p.id_proyecto == id_proyecto), None)
             if proyecto:
                 proyecto.agregar_tarea(nombre_tarea, descripcion)
-                print("Tarea agregada con éxito.")
+                print("Tarea agregada con exito.")
             else:
-                print(f"No se encontró el proyecto con ID: {id_proyecto}")
+                print(f"No se encontro el proyecto con ID: {id_proyecto}")
 
         elif opcion == '3':
             id_proyecto = input("Ingrese el ID del proyecto: ")
@@ -129,7 +125,7 @@ def menu():
                 except ValueError as e:
                     print(e)
             else:
-                print(f"No se encontró el proyecto con ID: {id_proyecto}")
+                print(f"No se encontro el proyecto con ID: {id_proyecto}")
 
         elif opcion == '4':
             id_proyecto = input("Ingrese el ID del proyecto: ")
@@ -138,7 +134,7 @@ def menu():
             if proyecto:
                 proyecto.recorrer_tareas()
             else:
-                print(f"No se encontró el proyecto con ID: {id_proyecto}")
+                print(f"No se encontro el proyecto con ID: {id_proyecto}")
 
         elif opcion == '5':
             for proyecto in lista_proyectos:
@@ -150,8 +146,7 @@ def menu():
             break
 
         else:
-            print("Opcion no . Intentelo nuevamente.")
-
+            print("Opcion no valida. Intentelo nuevamente.")
 
 
 menu()
