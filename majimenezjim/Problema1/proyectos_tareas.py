@@ -5,6 +5,7 @@ class Tarea:
         self.estado = estado
 
     def __str__(self):
+
         return f"Tarea: {self.nombre}, Descripcion: {self.descripcion}, Estado: {self.estado}"
 
 
