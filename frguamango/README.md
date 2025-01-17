@@ -25,8 +25,8 @@ El sistema está dividido en cuatro partes:
 ## Pasos para Ejecutar el Proyecto
 1. **Clonar el repositorio**:
    ```bash
-   git clone <URL del repositorio>
-   cd <directorio del repositorio>
+   git clone https://github.com/richardmijo/examen_semana_10.git
+   cd examen_semana_10/frguamango
    ```
 
 2. **Ejecutar el programa principal**:
