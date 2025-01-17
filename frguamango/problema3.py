@@ -23,7 +23,7 @@ class ListaDobleTareas:
             nueva_tarea.anterior = self.cola  # La nueva tarea apunta al nodo actual de la cola
             self.cola.siguiente = nueva_tarea  # La cola actual apunta a la nueva tarea
             self.cola = nueva_tarea  # Actualiza la cola a la nueva tarea
-
+        
     def insertar_tarea(self, posicion, nombre, descripcion):
         # Inserta una tarea en una posición específica
         nueva_tarea = TareaDoble(nombre, descripcion)  # Crear nueva tarea
